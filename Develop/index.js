@@ -1,5 +1,11 @@
+// Include required modules
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateHTML = require('./Src/generateHTML')
+const Employee = require('./Lib/Employee');
+const Engineer = require('./Lib/Engineer');
+const Intern = require('./Lib/Intern');
+const Manager = require('./Lib/Manager');
 
 const promptUser = () =>
 inquirer
@@ -32,4 +38,10 @@ inquirer
         }
     ])
 
-    promptUser();
+    // Function to initialize app
+    function init() {
+        promptUser();
+    }
+    
+    // Run init
+    init();
