@@ -7,14 +7,27 @@ class Employee {
     }
 
     // methods
-    checkInputType(name) {
-        if (typeof name === "string") {
-            return `Name: ${this.name}`
-        }
-        else {
-            return `${this.name} is not a valid name. Please enter a string.`
-        }
+    checkNameType() {
+        return this.name
     }
+
+    // checkIdType(id) {
+    //     if (typeof id === "number") {
+    //         return true;
+    //     }
+    //     else {
+    //         return `${this.id} is not a valid id. Please enter a number.`
+    //     }
+    // }
+
+    // checkEmailType(email) {
+    //     if (typeof email === "string") {
+    //         return true;
+    //     }
+    //     else {
+    //         return `${this.email} is not a valid email address. Please enter a string.`
+    //     }
+    // }
 }
 
 module.exports = Employee;
