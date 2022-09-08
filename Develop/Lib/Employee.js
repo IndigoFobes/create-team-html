@@ -7,10 +7,13 @@ class Employee {
     }
 
     // methods
-    checkNameType() {
+    checkName() {
         return this.name
     }
 
+    checkNameType(name) {
+        return typeof name;
+    }
     // checkIdType(id) {
     //     if (typeof id === "number") {
     //         return true;

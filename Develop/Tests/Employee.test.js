@@ -1,13 +1,20 @@
 // require relevant js file
 const Employee = require('../Lib/Employee');
 
-describe('Employee input type', () => {
+describe('Employee input', () => {
 
-    it('should log an error if user inputs the wrong data type for name', () => {
+    it('should make sure a name is being returned with the name function', () => {
 
-        const name = new Employee('John');
+        const employee = new Employee('John');
 
-        expect(name.checkNameType(name)).toBe('John');
+        expect(employee.checkName(employee)).toBe('John');
+    })
+
+    it('should check input type for name', () => {
+
+        const employee = new Employee('Bob');
+        expect(employee.checkNameType('Bob')).toEqual('string');
+        
     })
 
     // it('should log an error if user inputs the wrong data type for id', () => {
