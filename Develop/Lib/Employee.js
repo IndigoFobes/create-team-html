@@ -11,8 +11,17 @@ class Employee {
         return this.name
     }
 
+    // checkNameType(name) {
+    //     return typeof name;
+    // }
+
     checkNameType(name) {
-        return typeof name;
+        if (typeof name === 'string') {
+            return true
+        }
+        else {
+            return undefined;
+        }
     }
     // checkIdType(id) {
     //     if (typeof id === "number") {

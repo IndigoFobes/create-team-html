@@ -10,10 +10,11 @@ describe('Employee input', () => {
         expect(employee.checkName(employee)).toBe('John');
     })
 
-    it('should check input type for name', () => {
 
-        const employee = new Employee('Bob');
-        expect(employee.checkNameType('Bob')).toEqual('string');
+    it('should check input type for name; if not a string, throw an error', () => {
+
+        const employee = new Employee(7);
+        expect(employee.checkNameType(7)).toBeFalsy();
         
     })
 
