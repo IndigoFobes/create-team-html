@@ -11,10 +11,6 @@ class Employee {
         return this.name
     }
 
-    // checkNameType(name) {
-    //     return typeof name;
-    // }
-
     checkNameType(name) {
         if (typeof name === 'string') {
             return true
@@ -23,23 +19,24 @@ class Employee {
             return undefined;
         }
     }
-    // checkIdType(id) {
-    //     if (typeof id === "number") {
-    //         return true;
-    //     }
-    //     else {
-    //         return `${this.id} is not a valid id. Please enter a number.`
-    //     }
-    // }
 
-    // checkEmailType(email) {
-    //     if (typeof email === "string") {
-    //         return true;
-    //     }
-    //     else {
-    //         return `${this.email} is not a valid email address. Please enter a string.`
-    //     }
-    // }
+    checkIdType(id) {
+        if (typeof id === 'number') {
+            return true
+        }
+        else {
+            return undefined;
+        }
+    }
+
+    checkEmailType(email) {
+        if (typeof email === 'string') {
+            return true
+        }
+        else {
+            return undefined;
+        }
+    }
 }
 
 module.exports = Employee;
