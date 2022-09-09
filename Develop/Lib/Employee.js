@@ -9,75 +9,63 @@ class Employee {
         this.email = email;
     }
 
-    // methods
-    checkName() {
-        return this.name
+    firstPrompt() {
+        this.getName();
     }
 
-    checkNameType(name) {
-        if (typeof name === 'string') {
-            return true
-        }
-        else {
-            return undefined;
-        }
+
+    getName() {
+        inquirer
+        .prompt ([
+            {
+                type: 'input',
+                name: 'name',
+                message: "Please enter employee's name."
+            }
+        ])   
+        .then((res) => {
+            console.log(res);
+            this.getId();
+        })
     }
 
-    checkIdType(id) {
-        if (typeof id === 'number') {
-            return true
-        }
-        else {
-            return undefined;
-        }
-    }
-
-    checkEmailType(email) {
-        if (typeof email === 'string') {
-            return true
-        }
-        else {
-            return undefined;
-        }
+    getId() {
+        inquirer
+        .prompt ([
+            {
+                type: 'number',
+                name: 'id',
+                message: "Please enter employee id."
+            }
+        ])   
+        .then((res) => {
+            console.log(res);
+            this.getEmail();
+        })
     }
     
-    // Prompt user for manager info to get started
-    promptUser() {
+    getEmail() {
         inquirer
-            .prompt ([
-                {
-                    type: 'input',
-                    name: 'managerName',
-                    message: "Please enter manager's name."
-                },
-                {
-                    type: 'input',
-                    name: 'managerId',
-                    message: "Please enter manager's ID."
-                },
-                {
-                    type: 'input',
-                    name: 'managerEmail',
-                    message: "Please enter manager's email address."
-                },
-                {
-                    type: 'input',
-                    name: 'officeNumber',
-                    message: "Please enter office number."
-                },
-                {
-                    type: 'list',
-                    name: 'options',
-                    message: 'Please select an option:',
-                    choices: ['Add an engineer', 'Add an intern', 'Finish building my team']
-                }
-            ])
+        .prompt ([
+            {
+                type: 'input',
+                name: 'email',
+                message: "Please enter employee's email address."
+            }
+        ])   
+        .then((res) => {
+            console.log(res);
+        })
     }
+
+    getRole() {
+        return "employee"
+    }
+
+
 };
+//const elvis = new Employee("Elvis", 556, 'elvispres@hotmail.com');
 
-
-const elvis = new Employee("Elvis", 556, 'elvispres@hotmail.com');
-
-console.log(elvis);
+//console.log(elvis);
 
 module.exports = Employee;
