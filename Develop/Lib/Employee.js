@@ -13,7 +13,7 @@ class Employee {
         this.getName();
     }
 
-
+// Prompts for all employees. Can I push responses into an array for index to grab?
     getName() {
         inquirer
         .prompt ([
@@ -55,11 +55,13 @@ class Employee {
         ])   
         .then((res) => {
             console.log(res);
+            this.getRole();
         })
     }
 
     getRole() {
-        return "employee"
+        console.log("employee");
+        // Call function to ask what user wants to do next.
     }
 
 
