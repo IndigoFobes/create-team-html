@@ -9,4 +9,4 @@ const employee = new Employee();
 //employee.getEmployeeInfo();
 
 // A method from Employee.js
-employee.getName();
+employee.promptUser();
