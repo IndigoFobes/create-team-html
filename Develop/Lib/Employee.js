@@ -12,39 +12,20 @@ class Employee {
     }
 
     // Methods
-    promptUser = () => {
-        return inquirer.prompt([
-            {
-                type: 'input',
-                name: 'name',
-                message: 'Please enter employee name.'
-            },
-            {
-                type: 'number',
-                name: 'id',
-                message: 'Please enter employee id.'
-            },
-            {
-                type: 'input',
-                name: 'email',
-                message: 'Please enter employee email address.'
-            }
-        ])
-    }
-
-    getName(name) {
-        return `Name: ${name}`
+    getName() {
+        return this.name;
     };
 
     getId() {
-        
+        return this.id;
     }
     
     getEmail() {
-       
+       return this.email;
     }
 
     getRole() {
+        
         // Call function to ask what user wants to do next.
     }
 
