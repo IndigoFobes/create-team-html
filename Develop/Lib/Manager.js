@@ -11,6 +11,5 @@ class Manager extends Employee {
 
 }
 
-const manager = new Manager('james', 234, 'momma.com', 707);
-
+module.exports = Manager;
 

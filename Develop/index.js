@@ -7,6 +7,7 @@ const generateHTML = require('./Src/generateHTML');
 const generateIntern = require('./Lib/Intern');
 const inquirer = require('inquirer');
 const fs = require('fs');
+const contentArray = [];
 
 // Prompts
 promptManager = () => {
@@ -33,10 +34,12 @@ promptManager = () => {
         },
     ])
     .then((responses) => {
-        const managerContent = generateHTML(responses);
+        //const managerContent = generateHTML(responses);
         //console.log(managerContent);
-        fs.writeFile('./Dist/index.html', managerContent, (err) => 
-            err ? console.log(err) : console.log('File created! See "Dist" folder.'));
+        // New manager
+        const manager = new Manager(responses);
+        contentArray.push(manager);
+        console.log(contentArray);
         askOptions();
     })
 };
