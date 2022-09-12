@@ -4,7 +4,7 @@
 
 // function to export
 // There will be parameters to input
-const generateHTML = () => {
+const generateHTML = ({name, id, email}) => {
 return `
 <!DOCTYPE html>
 <html lang="en">
@@ -17,15 +17,24 @@ return `
 <body>
     <h1>My Team Homepage</h1>
     <!-- For dynamically created boxes -->
-    <container id = "home-cont"></container>
+    <container id = "home-cont">
+        <container>
+            <h2>Manager</h2>
+            <ul>
+                <li> Name: ${name} </li>
+                <li> ID: ${id} </li>
+                <li> Email: ${email} </li>
+            </ul>
+        </container>
+    </container>
 </body>
 </html>
 `
 };
  
-const generateEmployee = () => {
+// const generateEmployee = () => {
 
-};
+// };
 
-generateHTML();
+//generateHTML();
 module.exports = generateHTML;

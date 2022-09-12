@@ -26,6 +26,10 @@ promptManager = () => {
             message: "Please enter manager's email address."
         }
     ])
+    .then((responses) => {
+        const managerContent = generateHTML(responses);
+        console.log(managerContent);
+    })
 }
 
 // create a new employee to initialize app
