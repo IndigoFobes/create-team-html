@@ -24,11 +24,18 @@ promptManager = () => {
             type: 'input',
             name: 'email',
             message: "Please enter manager's email address."
-        }
+        },
+        {
+            type: 'number',
+            name: 'officeNumber',
+            message: "Please enter manager's office number."
+        },
     ])
     .then((responses) => {
         const managerContent = generateHTML(responses);
-        console.log(managerContent);
+        //console.log(managerContent);
+        fs.writeFile('./Dist/index.html', managerContent, (err) => 
+            err ? console.log(err) : console.log('File created! See "Dist" folder.'));
         askOptions();
     })
 };
@@ -43,7 +50,50 @@ askOptions = () => {
         },
     ])
     .then((response) => {
-        console.log(response.newEmployee[0]);
+        const userRes = response.newEmployee[0];
+        if (userRes === 'Finish building my team') {
+            // Make html and log 'html created'
+            console.log('See Dist folder for generated html.')
+        }
+        else if (userRes === 'Intern') {
+            promptIntern();
+        }
+        else if (userRes === 'Engineer') {
+            // promptEngineer();
+        }
+        else {
+            // error
+        }
+        //console.log(response.newEmployee[0]);
+    })
+};
+
+promptIntern = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: "Please enter intern's name."
+        },
+        {
+            type: 'number',
+            name: 'id',
+            message: "Please enter intern's id."
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Please enter intern's email address."
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "Please enter intern's school."
+        },
+    ])
+    .then ((response) => {
+        const internContent = generateIntern(response)
+
     })
 }
 // create a new employee to initialize app

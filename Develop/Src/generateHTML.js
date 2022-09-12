@@ -4,7 +4,7 @@
 
 // function to export
 // There will be parameters to input
-const generateHTML = ({name, id, email}) => {
+const generateHTML = ({name, id, email, officeNumber}) => {
 return `
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +24,7 @@ return `
                 <li> Name: ${name} </li>
                 <li> ID: ${id} </li>
                 <li> Email: ${email} </li>
+                <li> Office Number: ${officeNumber} </li>
             </ul>
         </container>
     </container>
@@ -32,9 +33,9 @@ return `
 `
 };
  
-// const generateEmployee = () => {
+const generateIntern = () => {
 
-// };
+};
 
 //generateHTML();
 module.exports = generateHTML;
