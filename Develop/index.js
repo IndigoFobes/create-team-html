@@ -29,9 +29,23 @@ promptManager = () => {
     .then((responses) => {
         const managerContent = generateHTML(responses);
         console.log(managerContent);
+        askOptions();
+    })
+};
+
+askOptions = () => {
+    return inquirer.prompt([
+        {
+            type: 'checkbox',
+            name: 'newEmployee',
+            message: 'To add an employee, please choose an option from below. Or finish building team.',
+            choices: ['Engineer', 'Intern', 'Finish building my team']
+        },
+    ])
+    .then((response) => {
+        console.log(response.newEmployee[0]);
     })
 }
-
 // create a new employee to initialize app
 const employee = new Employee('john', 66, 'j.com');
 employee.getName();
