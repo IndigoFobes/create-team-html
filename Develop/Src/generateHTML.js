@@ -2,6 +2,7 @@
 // 1. Create a template for overall html page
 // 2. Create templates for each employee type
 
+const generateIntern = require('../Lib/Intern')
 // function to export
 // There will be parameters to input
 const generateHTML = ({name, id, email, officeNumber}) => {
@@ -27,15 +28,14 @@ return `
                 <li> Office Number: ${officeNumber} </li>
             </ul>
         </container>
+        ${generateIntern}
     </container>
 </body>
 </html>
 `
 };
- 
-const generateIntern = () => {
 
-};
 
 //generateHTML();
 module.exports = generateHTML;
+//module.exports = generateIntern;

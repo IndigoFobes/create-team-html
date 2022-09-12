@@ -15,11 +15,23 @@
             <h2>Manager</h2>
             <ul>
                 <li> Name: indigo </li>
-                <li> ID: 55 </li>
+                <li> ID: 77 </li>
                 <li> Email: indi.com </li>
-                <li> Office Number: 5 </li>
+                <li> Office Number: 4 </li>
             </ul>
         </container>
+        ({name, id, email, school}) => {
+    return `
+    <container>
+        <h2>Manager</h2>
+        <ul>
+            <li> Name: ${name} </li>
+            <li> ID: ${id} </li>
+            <li> Email: ${email} </li>
+            <li> School: ${school} </li>
+        </ul>
+    </container>`
+}
     </container>
 </body>
 </html>

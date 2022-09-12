@@ -4,6 +4,7 @@ const Manager = require('./Lib/Manager');
 const Intern = require('./Lib/Intern');
 const Engineer = require('./Lib/Engineer');
 const generateHTML = require('./Src/generateHTML');
+const generateIntern = require('./Lib/Intern');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
@@ -92,13 +93,14 @@ promptIntern = () => {
         },
     ])
     .then ((response) => {
-        const internContent = generateIntern(response)
+        const internContent = generateIntern(response);
+        console.log(internContent);
 
     })
 }
 // create a new employee to initialize app
-const employee = new Employee('john', 66, 'j.com');
-employee.getName();
+// const employee = new Employee('john', 66, 'j.com');
+// employee.getName();
 
 
 // Initial prompt
