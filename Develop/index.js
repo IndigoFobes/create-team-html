@@ -4,9 +4,8 @@ const Manager = require('./Lib/Manager');
 const Intern = require('./Lib/Intern');
 const Engineer = require('./Lib/Engineer');
 const generateHTML = require('./Src/generateHTML');
-const generateIntern = require('./Lib/Intern');
 const inquirer = require('inquirer');
-const fs = require('fs');
+//const fs = require('fs');
 // Will use this array to puch content into and use to write html file
 const contentArray = [];
 
@@ -69,10 +68,13 @@ promptIntern = () => {
             message: "Please enter intern's school."
         },
     ])
-    .then ((response) => {
-        const internContent = generateIntern(response);
-        console.log(internContent);
-
+    .then ((responses) => {
+        const intern = new Intern(responses.name, responses.id, responses.email, responses.school);
+        // Push new intern to array
+        contentArray.push(intern);
+        console.log(contentArray);
+        // What does user want to do next?
+        askOptions();
     })
 }
 
@@ -96,14 +98,17 @@ promptEngineer = () => {
         },
         {
             type: 'input',
-            name: 'school',
+            name: 'github',
             message: "Please enter engineer's github username."
         },
     ])
-    .then ((response) => {
-        const engineerContent = generateEngineer(response);
-        console.log(engineerContent);
-
+    .then ((responses) => {
+        const engineer = new Engineer(responses.name, responses.id, responses.email, responses.github);
+        // Push new engineer to array
+        contentArray.push(engineer);
+        console.log(contentArray);
+        // What does user want to do next?
+        askOptions();
     })
 }
 
@@ -118,24 +123,26 @@ askOptions = () => {
         },
     ])
     .then((response) => {
+
         const userRes = response.newEmployee[0];
+        // If statement to determine next prompt
         if (userRes === 'Finish building my team') {
             // Make html and log 'html created'
+            generateHTML(contentArray);
             console.log('See Dist folder for generated html.')
         }
         else if (userRes === 'Intern') {
             promptIntern();
         }
         else if (userRes === 'Engineer') {
-            // promptEngineer();
+            promptEngineer();
         }
         else {
-            // error
+            console.error('Something went wrong!')
         }
         //console.log(response.newEmployee[0]);
     })
 };
-
 
 // Initial prompt
 promptManager();
