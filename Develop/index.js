@@ -5,7 +5,7 @@ const Intern = require('./Lib/Intern');
 const Engineer = require('./Lib/Engineer');
 const generateHTML = require('./Src/generateHTML');
 const inquirer = require('inquirer');
-//const fs = require('fs');
+const fs = require('fs');
 // Will use this array to puch content into and use to write html file
 const contentArray = [];
 
@@ -38,8 +38,8 @@ promptManager = () => {
         // Create a new Manager object
         const manager = new Manager(responses.name, responses.id, responses.email, responses.officeNumber);
         // Push this new object to empty content array
-        contentArray.push(manager)
-        console.log(contentArray)
+        contentArray.push(manager);
+        console.log(contentArray);
         askOptions();
     })
 };
@@ -130,6 +130,7 @@ askOptions = () => {
             // Make html and log 'html created'
             generateHTML(contentArray);
             console.log('See Dist folder for generated html.')
+            // fs in here?
         }
         else if (userRes === 'Intern') {
             promptIntern();

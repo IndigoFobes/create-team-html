@@ -9,7 +9,11 @@ class Intern extends Employee {
 
     getSchool() {
         return this.school;
-    }
+    };
+
+    getRole() {
+        console.log('Intern');
+    };
 }
 
 // const generateIntern = ({name, id, email, school}) => {

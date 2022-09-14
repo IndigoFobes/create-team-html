@@ -13,20 +13,19 @@ class Employee {
 
     getId() {
         return this.id;
-    }
+    };
     
     getEmail() {
        return this.email;
-    }
+    };
 
     getRole() {
-        
-        // Call function to ask what user wants to do next.
-    }
+        console.log('Employee');
+    };
 
 };
-//const elvis = new Employee("Elvis", 556, 'elvispres@hotmail.com');
 
-//console.log(elvis);
+const employee = new Employee;
+employee.getRole();
 
 module.exports = Employee;
