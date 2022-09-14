@@ -1,8 +1,3 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
-
-
-
 class Employee {
     // first, the constructor
     constructor(name, id, email) {
