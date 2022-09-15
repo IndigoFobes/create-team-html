@@ -12,7 +12,7 @@ class Intern extends Employee {
     };
 
     getRole() {
-        console.log('Intern');
+        return 'Intern';
     };
 }
 

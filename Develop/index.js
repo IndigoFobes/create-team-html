@@ -128,10 +128,11 @@ askOptions = () => {
         // If statement to determine next prompt
         if (userRes === 'Finish building my team') {
             // Make html and log 'html created'
-            generateHTML(contentArray);
+            var htmlContent = generateHTML(contentArray);
+            console.log('***html content from index:', htmlContent);
             console.log('See Dist folder for generated html.')
             
-            // fs.writeFileSync('./Dist', generateHTML(contentArray))
+            fs.writeFileSync('./Dist', htmlContent)
             // console.log(generateHTML(contentArray));
         }
         else if (userRes === 'Intern') {

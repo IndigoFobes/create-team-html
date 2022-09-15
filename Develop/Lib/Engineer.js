@@ -12,7 +12,7 @@ class Engineer extends Employee {
     };
 
     getRole() {
-        console.log('Engineer');
+        return 'Engineer';
     }
 };
 
