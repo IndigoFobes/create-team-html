@@ -130,7 +130,9 @@ askOptions = () => {
             // Make html and log 'html created'
             generateHTML(contentArray);
             console.log('See Dist folder for generated html.')
-            // fs in here?
+            
+            // fs.writeFileSync('./Dist', generateHTML(contentArray))
+            // console.log(generateHTML(contentArray));
         }
         else if (userRes === 'Intern') {
             promptIntern();
